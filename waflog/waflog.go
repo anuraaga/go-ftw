@@ -3,7 +3,7 @@ package waflog
 import (
 	"os"
 
-	"github.com/fzipi/go-ftw/config"
+	"github.com/anuraaga/go-ftw/config"
 	"github.com/rs/zerolog/log"
 )
 

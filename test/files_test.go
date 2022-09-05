@@ -1,10 +1,10 @@
 package test
 
 import (
-	"regexp"
-	"testing"
+    "regexp"
+    "testing"
 
-	"github.com/fzipi/go-ftw/utils"
+    "github.com/anuraaga/go-ftw/utils"
 )
 
 var yamlTest = `
@@ -49,34 +49,34 @@ this is not yaml
 `
 
 func TestGetTestFromYAML(t *testing.T) {
-	filename, _ := utils.CreateTempFileWithContent(yamlTest, "test-yaml-*")
-	tests, _ := GetTestsFromFiles(filename)
+    filename, _ := utils.CreateTempFileWithContent(yamlTest, "test-yaml-*")
+    tests, _ := GetTestsFromFiles(filename)
 
-	for _, ft := range tests {
-		if ft.FileName != filename {
-			t.Fatalf("Error!")
-		}
-		if ft.Meta.Author != "tester" {
-			t.Fatalf("Error!")
-		}
-		if ft.Meta.Name != "911100.yaml" {
-			t.Fatalf("Error!")
-		}
-		re := regexp.MustCompile("911100*")
+    for _, ft := range tests {
+        if ft.FileName != filename {
+            t.Fatalf("Error!")
+        }
+        if ft.Meta.Author != "tester" {
+            t.Fatalf("Error!")
+        }
+        if ft.Meta.Name != "911100.yaml" {
+            t.Fatalf("Error!")
+        }
+        re := regexp.MustCompile("911100*")
 
-		for _, test := range ft.Tests {
-			if ok := re.MatchString(test.TestTitle); !ok {
-				t.Fatalf("Can't read test title")
-			}
-		}
-	}
+        for _, test := range ft.Tests {
+            if ok := re.MatchString(test.TestTitle); !ok {
+                t.Fatalf("Can't read test title")
+            }
+        }
+    }
 }
 
 func TestGetFromBadYAML(t *testing.T) {
-	filename, _ := utils.CreateTempFileWithContent(wrongYamlTest, "test-yaml-*")
-	_, err := GetTestsFromFiles(filename)
+    filename, _ := utils.CreateTempFileWithContent(wrongYamlTest, "test-yaml-*")
+    _, err := GetTestsFromFiles(filename)
 
-	if err == nil {
-		t.Fatalf("Error!")
-	}
+    if err == nil {
+        t.Fatalf("Error!")
+    }
 }

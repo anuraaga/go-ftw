@@ -3,7 +3,7 @@ package check
 import (
 	"testing"
 
-	"github.com/fzipi/go-ftw/config"
+	"github.com/anuraaga/go-ftw/config"
 )
 
 var statusOKTests = []struct {

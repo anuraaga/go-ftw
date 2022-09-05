@@ -1,4 +1,4 @@
-module github.com/fzipi/go-ftw
+module github.com/anuraaga/go-ftw
 
 go 1.16
 

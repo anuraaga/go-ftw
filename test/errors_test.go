@@ -1,9 +1,9 @@
 package test
 
 import (
-	"testing"
+    "testing"
 
-	"github.com/fzipi/go-ftw/utils"
+    "github.com/anuraaga/go-ftw/utils"
 )
 
 var errorsTest = `---
@@ -43,13 +43,13 @@ var errorsTest = `---
 `
 
 func TestGetLinesFromTestName(t *testing.T) {
-	filename, _ := utils.CreateTempFileWithContent(errorsTest, "test-yaml-*")
-	tests, _ := GetTestsFromFiles(filename)
+    filename, _ := utils.CreateTempFileWithContent(errorsTest, "test-yaml-*")
+    tests, _ := GetTestsFromFiles(filename)
 
-	for _, ft := range tests {
-		line, _ := ft.GetLinesFromTest("911100-2")
-		if line != 22 {
-			t.Errorf("Not getting the proper line.")
-		}
-	}
+    for _, ft := range tests {
+        line, _ := ft.GetLinesFromTest("911100-2")
+        if line != 22 {
+            t.Errorf("Not getting the proper line.")
+        }
+    }
 }

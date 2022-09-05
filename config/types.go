@@ -1,17 +1,17 @@
 package config
 
-import "github.com/fzipi/go-ftw/test"
+import "github.com/anuraaga/go-ftw/test"
 
 // RunMode represents the mode of the test run
 type RunMode string
 
 const (
-	// CloudRunMode is the string that will be used to override the run mode of execution to cloud
-	CloudRunMode RunMode = "cloud"
-	// DefaultRunMode is the default execution run mode
-	DefaultRunMode RunMode = "default"
-	// DefaultLogMarkerHeaderName is the default log marker header name
-	DefaultLogMarkerHeaderName string = "X-CRS-Test"
+    // CloudRunMode is the string that will be used to override the run mode of execution to cloud
+    CloudRunMode RunMode = "cloud"
+    // DefaultRunMode is the default execution run mode
+    DefaultRunMode RunMode = "default"
+    // DefaultLogMarkerHeaderName is the default log marker header name
+    DefaultLogMarkerHeaderName string = "X-CRS-Test"
 )
 
 // FTWConfig is being exported to be used across the app
@@ -19,10 +19,10 @@ var FTWConfig *FTWConfiguration
 
 // FTWConfiguration FTW global Configuration
 type FTWConfiguration struct {
-	LogFile             string          `koanf:"logfile"`
-	TestOverride        FTWTestOverride `koanf:"testoverride"`
-	LogMarkerHeaderName string          `koanf:"logmarkerheadername"`
-	RunMode             RunMode         `koanf:"mode"`
+    LogFile             string          `koanf:"logfile"`
+    TestOverride        FTWTestOverride `koanf:"testoverride"`
+    LogMarkerHeaderName string          `koanf:"logmarkerheadername"`
+    RunMode             RunMode         `koanf:"mode"`
 }
 
 // FTWTestOverride holds four lists:
@@ -32,8 +32,8 @@ type FTWConfiguration struct {
 //	ForcePass is for tests you want to pass unconditionally. Test will be executed, and pass even when the test fails. You should add a comment on why you force pass the test
 //	ForceFail is for tests you want to fail unconditionally. Test will be executed, and fail even when the test passes. You should add a comment on why you force fail the test
 type FTWTestOverride struct {
-	Input     test.Input        `koanf:"input"`
-	Ignore    map[string]string `koanf:"ignore"`
-	ForcePass map[string]string `koanf:"forcepass"`
-	ForceFail map[string]string `koanf:"forcefail"`
+    Input     test.Input        `koanf:"input"`
+    Ignore    map[string]string `koanf:"ignore"`
+    ForcePass map[string]string `koanf:"forcepass"`
+    ForceFail map[string]string `koanf:"forcefail"`
 }

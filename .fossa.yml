@@ -5,10 +5,10 @@ version: 2
 cli:
   server: https://app.fossa.com
   fetcher: custom
-  project: https://github.com/fzipi/go-ftw.git
+  project: https://github.com/anuraaga/go-ftw.git
 analyze:
   modules:
-  - name: github.com/fzipi/go-ftw
+  - name: github.com/anuraaga/go-ftw
     type: go
-    target: github.com/fzipi/go-ftw
+    target: github.com/anuraaga/go-ftw
     path: .
