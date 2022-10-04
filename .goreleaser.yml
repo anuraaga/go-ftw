@@ -49,26 +49,26 @@ release:
   prerelease: auto
 dockers:
     - image_templates:
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-amd64"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-amd64"
       use: buildx
       goarch: amd64
       build_flag_templates:
           - "--platform=linux/amd64"
     - image_templates:
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-arm64"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-arm64"
       use: buildx
       goarch: arm64
       build_flag_templates:
           - "--platform=linux/arm64"
 docker_manifests:
-    - name_template: "ghcr.io/coreruleset/go-ftw:latest"
+    - name_template: "ghcr.io/anuraaga/go-ftw:latest"
       image_templates:
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-amd64"
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-arm64"
-    - name_template: "ghcr.io/coreruleset/go-ftw:{{ .Version }}"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-amd64"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-arm64"
+    - name_template: "ghcr.io/anuraaga/go-ftw:{{ .Version }}"
       image_templates:
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-amd64"
-          - "ghcr.io/coreruleset/go-ftw:{{ .Version }}-arm64"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-amd64"
+          - "ghcr.io/anuraaga/go-ftw:{{ .Version }}-arm64"
 nfpms:
   - id: "ftw"
     builds: ["ftw"]
