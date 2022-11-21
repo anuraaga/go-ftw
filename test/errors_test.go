@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coreruleset/go-ftw/utils"
+	"github.com/anuraaga/go-ftw/utils"
 )
 
 var errorsTest = `---

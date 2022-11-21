@@ -1,10 +1,10 @@
 # Go-FTW - Framework for Testing WAFs in Go!
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Go Report Card](https://goreportcard.com/badge/github.com/coreruleset/go-ftw)](https://goreportcard.com/report/github.com/coreruleset/go-ftw)
-[![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/coreruleset/go-ftw)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/coreruleset/go-ftw)](https://pkg.go.dev/github.com/coreruleset/go-ftw)
-[![Release](https://img.shields.io/github/v/release/coreruleset/go-ftw.svg?style=flat-square)](https://github.com/coreruleset/go-ftw/releases/latest)
+[![Go Report Card](https://goreportcard.com/badge/github.com/anuraaga/go-ftw)](https://goreportcard.com/report/github.com/anuraaga/go-ftw)
+[![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/anuraaga/go-ftw)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/anuraaga/go-ftw)](https://pkg.go.dev/github.com/anuraaga/go-ftw)
+[![Release](https://img.shields.io/github/v/release/coreruleset/go-ftw.svg?style=flat-square)](https://github.com/anuraaga/go-ftw/releases/latest)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/coreruleset/go-ftw.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/coreruleset/go-ftw/alerts/)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=coreruleset_go-ftw&metric=coverage)](https://sonarcloud.io/dashboard?id=coreruleset_go-ftw)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=coreruleset_go-ftw&metric=alert_status)](https://sonarcloud.io/dashboard?id=coreruleset_go-ftw)
@@ -25,11 +25,11 @@ My goals are:
 
 ## Install
 
-Go to the [releases](https://github.com/coreruleset/go-ftw/releases) page and get the one that matches your OS.
+Go to the [releases](https://github.com/anuraaga/go-ftw/releases) page and get the one that matches your OS.
 
 If you have Go installed and configured to run Go binaries from your shell you can also run
 ```bash
-go install github.com/coreruleset/go-ftw@latest
+go install github.com/anuraaga/go-ftw@latest
 ```
 
 ## Example Usage
@@ -40,7 +40,7 @@ In order to run the tests, you need to prepare the following:
 
 1. Active WAF
 2. Log where the WAF writes the alert messages
-3. go-ftw config file `.ftw.yaml` in the local folder or in your home folder (see [YAML Config file](https://github.com/coreruleset/go-ftw#yaml-config-file) for more information).
+3. go-ftw config file `.ftw.yaml` in the local folder or in your home folder (see [YAML Config file](https://github.com/anuraaga/go-ftw#yaml-config-file) for more information).
 4. At least one unit test in (go)-ftw's yaml format.
 
 ### YAML Config file
@@ -50,7 +50,7 @@ With the configuration, you can set paths for your environment, enable and disab
 The config file has four basic values:
 
 * `logfile` : path to WAF log with alert messages, relative or absolute
-* `logmarkerheadername` : name of a HTTP header used for marking log messages, usually `X-CRS-TEST` (see [How log parsing works](https://github.com/coreruleset/go-ftw#how-log-parsing-works) below)
+* `logmarkerheadername` : name of a HTTP header used for marking log messages, usually `X-CRS-TEST` (see [How log parsing works](https://github.com/anuraaga/go-ftw#how-log-parsing-works) below)
 * `testoverride` : a list of things to override (see "Overriding tests" below)>
 * `mode` : "default" or "cloud" (only change it if you need "cloud")
 

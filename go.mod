@@ -1,4 +1,4 @@
-module github.com/coreruleset/go-ftw
+module github.com/anuraaga/go-ftw
 
 go 1.18
 

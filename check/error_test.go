@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coreruleset/go-ftw/config"
+	"github.com/anuraaga/go-ftw/config"
 )
 
 var expectedOKTests = []struct {

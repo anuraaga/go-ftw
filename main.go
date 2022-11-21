@@ -3,47 +3,47 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	_ "time/tzdata"
+    "fmt"
+    "os"
+    _ "time/tzdata"
 
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
+    "github.com/rs/zerolog"
+    "github.com/rs/zerolog/log"
 
-	"github.com/coreruleset/go-ftw/cmd"
+    "github.com/anuraaga/go-ftw/cmd"
 )
 
 // nolint: gochecknoglobals
 var (
-	version = "dev"
-	commit  = ""
-	date    = ""
-	builtBy = ""
+    version = "dev"
+    commit  = ""
+    date    = ""
+    builtBy = ""
 )
 
 func main() {
-	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+    log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 
-	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
-	// Default level for this example is info, unless debug flag is present
-	zerolog.SetGlobalLevel(zerolog.InfoLevel)
+    zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
+    // Default level for this example is info, unless debug flag is present
+    zerolog.SetGlobalLevel(zerolog.InfoLevel)
 
-	cmd.Execute(
-		buildVersion(version, commit, date, builtBy),
-	)
+    cmd.Execute(
+        buildVersion(version, commit, date, builtBy),
+    )
 
 }
 
 func buildVersion(version, commit, date, builtBy string) string {
-	var result = version
-	if commit != "" {
-		result = fmt.Sprintf("%s\ncommit: %s", result, commit)
-	}
-	if date != "" {
-		result = fmt.Sprintf("%s\nbuilt at: %s", result, date)
-	}
-	if builtBy != "" {
-		result = fmt.Sprintf("%s\nbuilt by: %s", result, builtBy)
-	}
-	return result
+    var result = version
+    if commit != "" {
+        result = fmt.Sprintf("%s\ncommit: %s", result, commit)
+    }
+    if date != "" {
+        result = fmt.Sprintf("%s\nbuilt at: %s", result, date)
+    }
+    if builtBy != "" {
+        result = fmt.Sprintf("%s\nbuilt by: %s", result, builtBy)
+    }
+    return result
 }
