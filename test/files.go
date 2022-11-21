@@ -2,10 +2,10 @@ package test
 
 import (
 	"errors"
+	"gopkg.in/yaml.v3"
 	"os"
 	"regexp"
 
-	"github.com/goccy/go-yaml"
 	"github.com/rs/zerolog/log"
 	"github.com/yargevad/filepathx"
 )
@@ -34,7 +34,7 @@ func GetTestsFromFiles(globPattern string) ([]FTWTest, error) {
 		ftwTest, err := GetTestFromYaml(yamlString)
 		if err != nil {
 			log.Error().Msgf("Problem detected in file %s:\n%s\n%s",
-				fileName, yaml.FormatError(err, true, true),
+				fileName, err.Error(),
 				describeYamlError(err))
 			return tests, err
 		}
@@ -60,7 +60,7 @@ func GetTestFromYaml(testYaml []byte) (ftwTest FTWTest, err error) {
 }
 
 func readTestYaml(testYaml []byte) (t FTWTest, err error) {
-	err = yaml.Unmarshal([]byte(testYaml), &t)
+	err = yaml.Unmarshal(testYaml, &t)
 	return t, err
 }
 

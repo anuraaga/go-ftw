@@ -1,11 +1,10 @@
 package test
 
 import (
+	"gopkg.in/yaml.v3"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
-	"github.com/goccy/go-yaml"
 )
 
 var repeatTestSprig = `foo=%3d++++++++++++++++++++++++++++++++++`
